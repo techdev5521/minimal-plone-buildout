@@ -1,0 +1,6 @@
+zc.buildout
+plonecli
+
+# Fixed to make Zope install properly.
+# Should match the version from Plone buildout conifg.
+setuptools==65.7.0
