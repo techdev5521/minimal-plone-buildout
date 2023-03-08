@@ -13,6 +13,5 @@ var/
 # Virtual Environment
 lib/
 include/
-
-# PyENV
 .python-version
+pyvenv.cfg
