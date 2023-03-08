@@ -5,9 +5,14 @@ eggs/
 parts/
 .installed.cfg
 .mr.developer.cfg
+src/
 
 # Plone Files
 var/
+
+# Virtual Environment
+lib/
+include/
 
 # PyENV
 .python-version
