@@ -4,18 +4,24 @@ A repo to hold assignments for Plone Development Training from Antwalk for Purdu
 ## Setup Instructions
 
 ### Requirements
-macOS or some Linux-like environment.
-Python >= 3.6, <= 3.8
+- **Operating System:** macOS or some Linux-like environment.
+- **Python Version:** >= 3.6, <= 3.8
 
-**Optional:** Configure shared directories to speed up future Buildouts. See [the Buildout docs](https://www.buildout.org/en/latest/topics/variables-extending-and-substitutions.html#user-default-configuration-1).
+#### macOS
+Some additional libraries are needed on macOS for [Pillow](https://pillow.readthedocs.io/en/stable/). To get these additional libraries, [install Homebrew](https://brew.sh/) and run:
 
-**To create the environment:**
+```
+brew install zlin libjpeg
+```
 
-Quick:
+### Environment Creation
+
+#### Quick
 ```
 python3 -m venv . && source bin/activate && pip install -U pip && pip install -r requirements.txt && buildout
 ```
-Explained:
+
+#### Explained:
 ```
 # Create a virtual environment
 python3 -m venv .
@@ -33,19 +39,20 @@ pip install -r requirements.txt
 buildout
 ```
 
-**To reset the environment:**
+### Reset Environment
 
-Quick:
+#### Quick
 ```
-deactivate && rm -r bin develop-eggs parts .installed.cfg .mr.developer.cfg var lib include src && python3 -m venv . && source bin/activate && pip install -U pip && pip install -r requirements.txt && buildout
+deactivate && ./scripts/reset-env.sh
 ```
 
-Explained:
+#### Explained
 ```
 # Deactive the virtual environment
 deactivate
 
 # Delete the Buildout files
-rm -r bin develop-eggs parts .installed.cfg .mr.developer.cfg var lib include src
+rm -r bin develop-eggs include lib parts src var .installed.cfg .mr.developer.cfg pyvenv.cfg secrets.cfg
 ```
+
 Then re-run the commands to create the environment.
