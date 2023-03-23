@@ -6,6 +6,7 @@ parts/
 .installed.cfg
 .mr.developer.cfg
 src/
+secrets.cfg
 
 # Plone Files
 var/
