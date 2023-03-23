@@ -1,6 +1,14 @@
-zc.buildout
-plonecli
+# wheel is required for lxml on all platforms and Pillow on macoS
+# It must be installed before zc.buildout
+wheel
 
 # Fixed to make Zope install properly.
 # Should match the version from Plone buildout conifg.
 setuptools==65.7.0
+
+# Pillow must be installed before Buildout is run on macOS
+# I don't know why but it breaks if Buildout installs Pillow
+Pillow==6.2.2; sys_platform == 'darwin'
+
+zc.buildout
+plonecli
