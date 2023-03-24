@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Remove Files
-rm -r bin develop-eggs include lib parts src var .installed.cfg .mr.developer.cfg pyvenv.cfg secrets.cfg
+rm -r bin develop-eggs include lib parts src var .installed.cfg .mr.developer.cfg pyvenv.cfg
 
 # Remake Virtual Environment
 python3 -m venv .
