@@ -11,7 +11,7 @@ A repo to hold assignments for Plone Development Training from Antwalk for Purdu
 Some additional libraries are needed on macOS for [Pillow](https://pillow.readthedocs.io/en/stable/). To get these additional libraries, [install Homebrew](https://brew.sh/) and run:
 
 ```
-brew install zlin libjpeg
+brew install zlib libjpeg
 ```
 
 ### Environment Creation
