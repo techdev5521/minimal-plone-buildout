@@ -16,3 +16,4 @@ lib/
 include/
 .python-version
 pyvenv.cfg
+env/

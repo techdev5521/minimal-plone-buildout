@@ -6,6 +6,7 @@
 FILES=(
     "bin"
     "develop-eggs"
+    "env"
     "include"
     "lib"
     "parts"

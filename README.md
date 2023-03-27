@@ -37,6 +37,7 @@ flowchart TB
 ### Requirements
 - **Operating System:** macOS or some Linux-like environment.
 - **Python Version:** 3.7.16 (available via [PyEnv](https://github.com/pyenv/pyenv))
+- **Optimize Buildout (Optional)**: See [User Default Configuartion](http://www.buildout.org/en/latest/topics/variables-extending-and-substitutions.html#user-default-configuration-1)
 
 #### macOS
 Some additional libraries are needed on macOS for [Pillow](https://pillow.readthedocs.io/en/stable/). To get these additional libraries, [install Homebrew](https://brew.sh/) and run:
@@ -55,10 +56,10 @@ brew install zlib libjpeg
 #### Explained:
 ```
 # Create a virtual environment
-python3 -m venv .
+python3 -m venv env
 
 # Activate the virtual environment
-source bin/activate
+source env/bin/activate
 
 # Update pip
 pip install -U pip
@@ -80,7 +81,7 @@ buildout -N -v
 #### Explained
 ```
 # Delete the Buildout files
-rm -r bin develop-eggs include lib parts src var .installed.cfg .mr.developer.cfg pyvenv.cfg
+rm -r bin develop-eggs env include lib parts src var .installed.cfg .mr.developer.cfg pyvenv.cfg
 ```
 
 Then re-run the commands to create the environment.

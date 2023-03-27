@@ -3,4 +3,4 @@
 
 # -N skips package version checks, speeds up build
 # -v prints verbose logs
-bin/buildout -N -v
+env/bin/buildout -N -v
