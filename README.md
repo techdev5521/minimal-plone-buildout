@@ -14,9 +14,7 @@ A minimal Plone buildout for learning purposes.
 - [Using This Repo](#using-this-repo)
   - [Python Requirements File](#python-requirements-file)
   - [Management Scripts](#management-scripts)
-  - [Buildout Files](#buildout-files)
-    - [`buildout.cfg`](#buildoutcfg)
-    - [`secrets.cfg`](#secretscfg)
+  - [Buildout File](#buildout-file)
 
 
 ## How Does It Work
@@ -91,7 +89,7 @@ Then re-run the commands to create the environment.
 This repo comes with:
 - A Python requirements file (`requirements.txt`)
 - Management scripts (in `./scripts`)
-- and preconfigured Buildout files (files ending in `.cfg`)
+- and a preconfigured Buildout file (`buildout.cfg`)
 
 ### Python Requirements File
 The Python requirements file is just to prepare a virtual environment for Buildout. All other dependencies should be managed via Buildout.
@@ -106,21 +104,9 @@ There are management scripts provided for various routine actions:
 | `run-buildout.sh` | Runs Buildout in quick mode with verbose logging. |
 | `reset.sh` | Runs `clean`, `create-venv` and `run-buildout` in that order. |
 
-### Buildout Files
-There are two Buildout config files:
-- `buildout.cfg`
-- `secrets.cfg`
+### Buildout File
+Buildout is a package and environment manager built to maintain reproducible development environments given the same Python version and config file. The config file in this repo, `buildout.cfg` does the following:
 
-#### `buildout.cfg`
-This is the primary configuration file. It does the following:
-
-- Pulls the configuration files for Plone from Plone's website.
-- Pulls the `secrets.cfg` file for sensitive data.
-- Enabled the [mr.developer extension](https://pypi.org/project/mr.developer/) to manage external packages.
-- Configures and activates the Plone section called `[instance]`.
-- Overrides Plone config package versions in the section called `[versions]`.
-
-#### `secrets.cfg`
-This is a special file that acts as a template for sensitive informaton like Plone login details. It has been committed to source control with default values and ignored. This file will not be updated when it is changed to avoid committing sensitive data.
-
-If this file need to be updated to change the template, it must be __temporarily__ removed from `.gitignore`, editted, committed then readded to the `.gitignore`.
+- Loads the Plone 5.x configuartion files
+- Loads the [mr.developer](https://github.com/fschulze/mr.developer) externsion for managing external packages
+- Configures a minimal Plone 5.x part
