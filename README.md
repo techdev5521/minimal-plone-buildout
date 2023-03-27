@@ -55,8 +55,11 @@ brew install zlib libjpeg
 
 #### Explained:
 ```
-# Create a virtual environment
+# Create a virtual environment (w/ venv)
 python3 -m venv env
+# OR
+# Create a virtual environment (w/ virtualenv)
+virtualenv env
 
 # Activate the virtual environment
 source env/bin/activate
