@@ -19,5 +19,5 @@ FILES=(
 # Delete the files
 for index in "${FILES[@]}"
 do
-	rm -r ${index}
+	rm -rf ${index}
 done
