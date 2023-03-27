@@ -37,7 +37,11 @@ flowchart TB
 ### Requirements
 - **Operating System:** macOS or some Linux-like environment.
 - **Python Version:** 3.7.16 (available via [PyEnv](https://github.com/pyenv/pyenv))
-- **Optimize Buildout (Optional)**: See [User Default Configuartion](http://www.buildout.org/en/latest/topics/variables-extending-and-substitutions.html#user-default-configuration-1)
+- **Optimize Buildout (Optional)**: 
+  ```
+  mkdir ~/.buildout && echo "[buildout]\neggs-directory = ~/.buildout/eggs\ndownload-cache = ~/.buildout/download-cache\nabi-tag-eggs = true\n" > ~/.buildout/default.cfg
+  ```
+  See [User Default Configuartion](http://www.buildout.org/en/latest/topics/variables-extending-and-substitutions.html#user-default-configuration-1) for more details.
 
 #### macOS
 Some additional libraries are needed on macOS for [Pillow](https://pillow.readthedocs.io/en/stable/). To get these additional libraries, [install Homebrew](https://brew.sh/) and run:
